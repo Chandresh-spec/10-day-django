@@ -24,6 +24,11 @@
      <li><a href="#">Categories</a></li>
      <li><a href="#">About</a></li>
      <li><a href="#">Contact</a></li>
+     {% if request.user.is_authenticated %}
+     <li><a href="{% url 'logout' %}" class="login-btn">Logout</a></li>
+     {% else %}
+     <li><a href="{% url 'login' %}" class="login-btn">Login</a></li>
+     {% endif %}
    </ul>
  </nav>
  <!-- Hero Section -->

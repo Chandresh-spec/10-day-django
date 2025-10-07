@@ -316,3 +316,21 @@
       padding: 2rem;
       margin-top: 2rem;
     }
+
+
+
+
+
+.nav-links .login-btn {
+  background: #ffcc00;
+  color: #1e1e1e;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.nav-links .login-btn:hover {
+  background: #e6b800;
+  color: #1e1e1e;
+}
