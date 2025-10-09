@@ -7,11 +7,11 @@ from django.contrib.auth.models import User
 class SignupForm(UserCreationForm):
     email=forms.EmailField(
         required=True,
-        help_text="Enter a valid email Address",
+        help_text="enter the valid email",
         widget=forms.EmailInput(attrs={
-            'placeholder':'email',
-            'class':'form-input',
-        })
+            "placeholder":"enter the email",
+            "class":"form-input",
+        }),
     )
     username=forms.CharField(
         help_text="Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",

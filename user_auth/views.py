@@ -3,13 +3,15 @@ from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import  SignupForm
 from django.contrib.auth.models import User
+from django.contrib import  messages
 # Create your views here.
 def signup_view(request):
     if request.method=='POST':
         form=SignupForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            user=form.save()
+            login(request,user)
             return redirect('home')
         return render(request,'signup.html',{'form':form})
     else:
@@ -33,6 +35,12 @@ def login_view(request):
             if user:
                 login(request,user)
                 return redirect('home')
+            
+
+            else:
+                messages.error(request,"invalid username or password")
+            
+            
             
 
         
