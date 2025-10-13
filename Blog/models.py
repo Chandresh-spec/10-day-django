@@ -3,12 +3,12 @@ from django.utils import timezone
 
 # Create your models here.
 class Blogs(models.Model):
-    BLOG_TYPE={
-        'SPORTS':'SPORTS',
-        'TRAVEL':'TRAVEL',
-        'POLTICIS':'POLITICS',
-        'NATIONAL BLOG':'NATIONAL BLOG'
-    }
+    BLOG_TYPE=(
+        ('SPORTS','SPORTS'),
+        ('TRAVEL','TRAVEL'),
+        ('POLTICIS','POLITICS'),
+        ('NATIONAL BLOG','NATIONAL BLOG'),
+    )
     blog_name=models.CharField(null=False,blank=True, max_length=100)
     text=models.TextField(blank=True,null=True)
     blog_img=models.ImageField(upload_to='blogImg/',null=True,blank=True)

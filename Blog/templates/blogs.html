@@ -1,0 +1,36 @@
+{% load static %}
+{% block  content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'blog.css' %}">
+</head>
+{% include "navbar.html" %}
+<body>
+    
+   
+    <div class="blog-container">
+        {% for blog in blogs %}
+        <div class="blog-card">
+            {% if blog.blog_img %}
+                <img src="{{ blog.blog_img.url }}" alt="{{ blog.blog_name }}">
+            {% else %}
+                <img src="#" alt="No image">
+            {% endif %}
+            
+            <div class="blog-content">
+                <h2>{{ blog.blog_name }}</h2>
+                <p>{{ blog.text }}</p>
+            </div>
+            <button class="read-more-btn">Read More</button>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock  %}
+
+
+</body>
+</html>
